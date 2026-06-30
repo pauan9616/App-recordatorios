@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Agenda</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Agenda">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+
+<style>
+  :root{
+    --bg: #F4F0EA;
+    --paper: #FBF9F6;
+    --line: #E3DBD0;
+    --taupe: #BFB3A3;
+    --taupe-dark: #8C8071;
+    --ink: #4A453E;
+    --ink-soft: #8A8275;
+    --accent: #C9B8A4;
+    --accent-deep: #A98F75;
+    --done: #D8CFC2;
+    --danger: #B98C7C;
+    --radius: 18px;
+    --shadow: 0 2px 14px rgba(74,69,62,0.06);
+  }
+
+  *{box-sizing:border-box; -webkit-tap-highlight-color: transparent;}
+  html,body{
+    margin:0; padding:0; height:100%;
+    background:var(--bg);
+    color:var(--ink);
+    font-family: -apple-system, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    overflow:hidden;
+  }
+  #app{
+    display:flex; flex-direction:column;
+    height:100dvh;
+    max-width:560px;
+    margin:0 auto;
+    background:var(--bg);
+  }
+
+  header.topbar{
+    padding: calc(env(safe-area-inset-top) + 18px) 22px 10px 22px;
+    display:flex; align-items:baseline; justify-content:space-between;
+  }
+  header.topbar h1{
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight:400;
+    font-size:26px;
+    letter-spacing:0.3px;
+    margin:0;
+    color:var(--ink);
+  }
+  header.topbar .sub{
+    font-size:12.5px;
+    color:var(--ink-soft);
+    text-transform:capitalize;
+  }
+
+  main{
+    flex:1;
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+    padding: 6px 18px 110px 18px;
+  }
+
+  /* ---------- Bottom nav ---------- */
+  nav.tabbar{
+    position:sticky; bottom:0;
+    display:flex;
+    background: rgba(251,249,246,0.92);
+    backdrop-filter: blur(14px);
+    border-top: 1px solid var(--line);
+    padding: 8px 10px calc(env(safe-area-inset-bottom) + 8px) 10px;
+    gap:6px;
+  }
+  nav.tabbar button{
+    flex:1;
+    background:none; border:none;
+    display:flex; flex-direction:column; align-items:center; gap:4px;
+    padding:6px 0 2px 0;
+    font-family:inherit;
+    color: var(--ink-soft);
+    font-size:11px;
+    letter-spacing:0.2px;
+    border-radius:14px;
+    transition: color .2s ease, background .2s ease;
+  }
+  nav.tabbar button .icon{
+    width:22px; height:22px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  nav.tabbar button svg{ width:21px; height:21px; stroke:var(--ink-soft); fill:none; stroke-width:1.5; transition: stroke .2s ease;}
+  nav.tabbar button.active{ color:var(--accent-deep); background:var(--paper);}
+  nav.tabbar button.active svg{ stroke:var(--accent-deep); }
+
+  .view{ display:none; }
+  .view.active{ display:block; animation: fade .25s ease; }
+  @keyframes fade{ from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:translateY(0);} }
+
+  /* ---------- Section heading shared ---------- */
+  .section-label{
+    font-size:11px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--taupe-dark);
+    margin: 18px 2px 8px 2px;
+  }
+
+  /* ---------- Checklist card style (shared tasks/reminders) ---------- */
+  .card-list{
+    background:var(--paper);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .item-row{
+    display:flex; align-items:center; gap:12px;
+    padding:14px 16px;
+    border-bottom:1px solid var(--line);
+  }
+  .item-row:last-child{ border-bottom:none; }
+  .checkbox{
+    width:22px; height:22px; min-width:22px;
+    border-radius:50%;
+    border:1.6px solid var(--taupe);
+    display:flex; align-items:center; justify-content:center;
+    transition: all .2s ease;
+  }
+  .checkbox.checked{
+    background:var(--accent-deep);
+    border-color:var(--accent-deep);
+  }
+  .checkbox svg{ width:12px; height:12px; opacity:0; transition:opacity .15s ease; stroke:#fff; stroke-width:3; fill:none;}
+  .checkbox.checked svg{ opacity:1; }
+  .item-text{
+    flex:1;
+    font-size:15.5px;
+    line-height:1.35;
+    color:var(--ink);
+    word-break:break-word;
+  }
+  .item-text.done{
+    color: var(--ink-soft);
+    text-decoration: line-through;
+    text-decoration-color: var(--taupe);
+  }
+  .item-meta{
+    display:flex; flex-direction:column; flex:1; gap:2px; min-width:0;
+  }
+  .item-tag{
+    font-size:10.5px;
+    letter-spacing:0.4px;
+    text-transform:uppercase;
+    color:var(--taupe-dark);
+  }
+  .item-del{
+    width:26px; height:26px;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--taupe);
+    font-size:18px;
+    border:none; background:none;
+  }
+
+  .empty-msg{
+    padding:34px 16px;
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:14px;
+    line-height:1.5;
+  }
+
+  /* ---------- Add input bar ---------- */
+  .add-bar{
+    display:flex; gap:8px;
+    margin-top:14px;
+  }
+  .add-bar input{
+    flex:1;
+    border:1px solid var(--line);
+    background:var(--paper);
+    border-radius:14px;
+    padding:13px 14px;
+    font-size:15px;
+    font-family:inherit;
+    color:var(--ink);
+    outline:none;
+  }
+  .add-bar input::placeholder{ color: #B7AE9F; }
+  .add-bar button{
+    width:46px; height:46px;
+    border-radius:14px;
+    border:none;
+    background: var(--accent-deep);
+    color:#fff;
+    font-size:22px;
+    line-height:1;
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .add-bar button:active{ opacity:.8; }
+
+  .pending-banner{
+    display:flex; align-items:baseline; gap:8px;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    margin: 4px 0 16px 0;
+    box-shadow: var(--shadow);
+  }
+  .pending-banner .pending-num{
+    font-family: Georgia, serif;
+    font-size: 28px;
+    color:#fff;
+    line-height:1;
+  }
+  .pending-banner .pending-label{
+    font-size: 13px;
+    color: rgba(255,255,255,0.92);
+    letter-spacing:0.2px;
+  }
+  .pending-banner.all-done{
+    background: var(--paper);
+    border: 1px solid var(--line);
+  }
+  .pending-banner.all-done .pending-num{ color: var(--accent-deep); }
+  .pending-banner.all-done .pending-label{ color: var(--ink-soft); }
+
+  .progress-wrap{
+    margin: 4px 2px 2px 2px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .progress-track{
+    flex:1; height:5px; border-radius:3px;
+    background: var(--line);
+    overflow:hidden;
+  }
+  .progress-fill{
+    height:100%;
+    background: var(--accent-deep);
+    border-radius:3px;
+    transition: width .3s ease;
+  }
+  .progress-num{ font-size:12px; color:var(--ink-soft); min-width:34px; text-align:right;}
+
+  /* ---------- Calendar ---------- */
+  .cal-nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 4px 2px 14px 2px;
+  }
+  .cal-nav button{
+    width:34px; height:34px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    background:var(--paper);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .cal-nav button svg{ width:14px; height:14px; stroke:var(--ink-soft); fill:none; stroke-width:2;}
+  .cal-title{
+    font-family: Georgia, serif;
+    font-size:19px;
+    text-transform:capitalize;
+    color:var(--ink);
+  }
+  .weekdays{
+    display:grid; grid-template-columns:repeat(7,1fr);
+    margin-bottom:6px;
+  }
+  .weekdays span{
+    text-align:center;
+    font-size:10.5px;
+    color:var(--taupe-dark);
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+  }
+  .days-grid{
+    display:grid; grid-template-columns:repeat(7,1fr);
+    gap:6px;
+  }
+  .day-cell{
+    aspect-ratio:1/1;
+    border-radius:13px;
+    background:var(--paper);
+    border:1px solid var(--line);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    position:relative;
+    color:var(--ink);
+    font-size:14.5px;
+  }
+  .day-cell.empty{ background:transparent; border:none; }
+  .day-cell.today{
+    border:1.5px solid var(--accent-deep);
+    font-weight:600;
+  }
+  .day-cell.has-task::after{
+    content:"";
+    width:5px; height:5px;
+    border-radius:50%;
+    background:var(--accent-deep);
+    position:absolute;
+    bottom:7px;
+  }
+  .day-cell:active{ background:var(--accent); }
+
+  /* ---------- Day modal ---------- */
+  .modal-backdrop{
+    position:fixed; inset:0;
+    background:rgba(40,36,30,0.32);
+    display:none;
+    align-items:flex-end;
+    z-index:50;
+  }
+  .modal-backdrop.open{ display:flex; }
+  .modal-sheet{
+    width:100%;
+    max-width:560px;
+    margin:0 auto;
+    background:var(--bg);
+    border-radius: 24px 24px 0 0;
+    padding: 14px 20px calc(env(safe-area-inset-bottom) + 22px) 20px;
+    max-height:82vh;
+    display:flex; flex-direction:column;
+    animation: slideUp .25s ease;
+  }
+  @keyframes slideUp{ from{ transform:translateY(30px); opacity:0;} to{ transform:translateY(0); opacity:1;} }
+  .modal-handle{
+    width:36px; height:4px; border-radius:3px;
+    background:var(--line);
+    margin: 4px auto 14px auto;
+  }
+  .modal-head{
+    display:flex; align-items:center; justify-content:space-between;
+    margin-bottom:12px;
+  }
+  .modal-head h2{
+    font-family:Georgia,serif; font-weight:400;
+    font-size:20px; margin:0; text-transform:capitalize; color:var(--ink);
+  }
+  .modal-close{
+    width:30px; height:30px; border-radius:50%;
+    background:var(--paper); border:1px solid var(--line);
+    color:var(--ink-soft); font-size:16px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .modal-body{ overflow-y:auto; }
+
+  ::-webkit-scrollbar{ display:none; }
+</style>
+</head>
+<body>
+<div id="app">
+
+  <header class="topbar">
+    <div>
+      <h1 id="header-title">Tareas</h1>
+      <div class="sub" id="header-sub"></div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== TAREAS DEL DÍA ===================== -->
+    <section class="view active" id="view-tasks">
+      <div class="pending-banner" id="pending-banner">
+        <span class="pending-num" id="pending-banner-num">0</span>
+        <span class="pending-label" id="pending-banner-label">tareas pendientes hoy</span>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-track"><div class="progress-fill" id="tasks-progress-fill"></div></div>
+        <div class="progress-num" id="tasks-progress-num">0/0</div>
+      </div>
+      <div class="card-list" id="tasks-list" style="margin-top:14px;"></div>
+      <div class="add-bar">
+        <input id="tasks-input" type="text" placeholder="Añadir tarea de hoy…" maxlength="120">
+        <button id="tasks-add-btn" aria-label="Añadir">+</button>
+      </div>
+    </section>
+
+    <!-- ===================== CALENDARIO ===================== -->
+    <section class="view" id="view-calendar">
+      <div class="cal-nav">
+        <button id="cal-prev"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <div class="cal-title" id="cal-title"></div>
+        <button id="cal-next"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+      <div class="weekdays">
+        <span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span>
+      </div>
+      <div class="days-grid" id="days-grid"></div>
+    </section>
+
+    <!-- ===================== RECORDATORIOS ===================== -->
+    <section class="view" id="view-reminders">
+      <div class="section-label">Todo lo registrado</div>
+      <div class="card-list" id="reminders-list"></div>
+      <div class="add-bar">
+        <input id="reminders-input" type="text" placeholder="Añadir recordatorio sin fecha…" maxlength="120">
+        <button id="reminders-add-btn" aria-label="Añadir">+</button>
+      </div>
+    </section>
+
+  </main>
+
+  <nav class="tabbar">
+    <button class="tab-btn active" data-view="tasks">
+      <span class="icon"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 6l3 3 3-3M4 12h16M4 12l3 3 3-3M4 18h10"/></svg></span>
+      Pendientes
+    </button>
+    <button class="tab-btn" data-view="calendar">
+      <span class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
+      Calendario
+    </button>
+    <button class="tab-btn" data-view="reminders">
+      <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 22a2.5 2.5 0 0 0 2.5-2.5h-5A2.5 2.5 0 0 0 12 22z"/><path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 2.5h16z"/></svg></span>
+      Recordatorios
+    </button>
+  </nav>
+
+</div>
+
+<!-- ===================== MODAL DÍA ===================== -->
+<div class="modal-backdrop" id="modal-backdrop">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-head">
+      <h2 id="modal-date-title"></h2>
+      <button class="modal-close" id="modal-close">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="card-list" id="modal-tasks-list"></div>
+      <div class="add-bar">
+        <input id="modal-input" type="text" placeholder="Añadir tarea…" maxlength="120">
+        <button id="modal-add-btn">+</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  // ---------- Storage unificado ----------
+  // items = [ {id, text, done, date} ]  -> date = "YYYY-MM-DD" o null (recordatorio sin fecha, largo plazo)
+  const STORAGE_KEY = 'agenda_items_v2';
+
+  function loadItems(){
+    try{ return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); }
+    catch(e){ return []; }
+  }
+  function saveItems(items){ localStorage.setItem(STORAGE_KEY, JSON.stringify(items)); }
+  function uid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2,7); }
+
+  function pad(n){ return n.toString().padStart(2,'0'); }
+  function keyFor(date){ return `${date.getFullYear()}-${pad(date.getMonth()+1)}-${pad(date.getDate())}`; }
+  function todayKey(){ return keyFor(new Date()); }
+
+  const MESES = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+  const DIAS_LARGO = ["domingo","lunes","martes","miércoles","jueves","viernes","sábado"];
+
+  function formatDateLabel(key){
+    const [y,m,d] = key.split('-').map(Number);
+    const dt = new Date(y, m-1, d);
+    if(key === todayKey()) return 'Hoy';
+    return `${d} de ${MESES[m-1]}`;
+  }
+
+  // ---------- Tabs ----------
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const views = { tasks: document.getElementById('view-tasks'), calendar: document.getElementById('view-calendar'), reminders: document.getElementById('view-reminders') };
+  const headerTitle = document.getElementById('header-title');
+  const headerSub = document.getElementById('header-sub');
+
+  function setHeader(){
+    const today = new Date();
+    headerSub.textContent = `${DIAS_LARGO[today.getDay()]}, ${today.getDate()} de ${MESES[today.getMonth()]}`;
+  }
+
+  function renderAll(){
+    renderTodayTasks();
+    renderCalendar();
+    renderReminders();
+  }
+
+  tabBtns.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      tabBtns.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      Object.values(views).forEach(v=>v.classList.remove('active'));
+      const target = btn.dataset.view;
+      views[target].classList.add('active');
+      const titles = {tasks:'Tareas', calendar:'Calendario', reminders:'Recordatorios'};
+      headerTitle.textContent = titles[target];
+      renderAll();
+    });
+  });
+
+  function checkIcon(){
+    return '<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>';
+  }
+
+  // Renderer genérico de checklist. items: array de objetos {id,text,done,date}
+  // showTag: si true, muestra etiqueta de fecha/origen sobre cada texto
+  function renderItemList(container, items, emptyMsg, showTag){
+    container.innerHTML = '';
+    if(!items.length){
+      const div = document.createElement('div');
+      div.className = 'empty-msg';
+      div.style.whiteSpace = 'pre-line';
+      div.textContent = emptyMsg;
+      container.appendChild(div);
+      return;
+    }
+    items.forEach(item=>{
+      const row = document.createElement('div');
+      row.className = 'item-row';
+
+      const cb = document.createElement('div');
+      cb.className = 'checkbox' + (item.done?' checked':'');
+      cb.innerHTML = checkIcon();
+      cb.addEventListener('click', ()=> toggleItem(item.id));
+
+      const meta = document.createElement('div');
+      meta.className = 'item-meta';
+      meta.addEventListener('click', ()=> toggleItem(item.id));
+
+      if(showTag){
+        const tag = document.createElement('div');
+        tag.className = 'item-tag';
+        tag.textContent = item.date ? formatDateLabel(item.date) : 'Largo plazo';
+        meta.appendChild(tag);
+      }
+
+      const txt = document.createElement('div');
+      txt.className = 'item-text' + (item.done?' done':'');
+      txt.textContent = item.text;
+      meta.appendChild(txt);
+
+      const del = document.createElement('button');
+      del.className = 'item-del';
+      del.textContent = '×';
+      del.addEventListener('click', (e)=>{ e.stopPropagation(); deleteItem(item.id); });
+
+      row.appendChild(cb);
+      row.appendChild(meta);
+      row.appendChild(del);
+      container.appendChild(row);
+    });
+  }
+
+  function toggleItem(id){
+    const items = loadItems();
+    const idx = items.findIndex(i=>i.id===id);
+    if(idx>-1){ items[idx].done = !items[idx].done; saveItems(items); renderAll(); }
+  }
+  function deleteItem(id){
+    const items = loadItems().filter(i=>i.id!==id);
+    saveItems(items);
+    renderAll();
+  }
+  function addItem(text, date){
+    if(!text.trim()) return;
+    const items = loadItems();
+    items.push({ id: uid(), text: text.trim(), done:false, date: date || null });
+    saveItems(items);
+    renderAll();
+  }
+
+  // ====================================================
+  // PENDIENTES (tareas de hoy)
+  // ====================================================
+  const tasksList = document.getElementById('tasks-list');
+  const tasksInput = document.getElementById('tasks-input');
+  const tasksAddBtn = document.getElementById('tasks-add-btn');
+  const progressFill = document.getElementById('tasks-progress-fill');
+  const progressNum = document.getElementById('tasks-progress-num');
+
+  const pendingBanner = document.getElementById('pending-banner');
+  const pendingBannerNum = document.getElementById('pending-banner-num');
+  const pendingBannerLabel = document.getElementById('pending-banner-label');
+
+  function renderTodayTasks(){
+    const list = loadItems().filter(i => i.date === todayKey());
+    renderItemList(tasksList, list, "Aún no hay tareas para hoy.\nAñade la primera abajo.", false);
+    const total = list.length;
+    const done = list.filter(t=>t.done).length;
+    const pending = total - done;
+
+    progressFill.style.width = total? `${(done/total)*100}%` : '0%';
+    progressNum.textContent = `${done}/${total}`;
+
+    pendingBannerNum.textContent = pending;
+    if(total === 0){
+      pendingBanner.classList.add('all-done');
+      pendingBannerLabel.textContent = 'sin tareas para hoy';
+    } else if(pending === 0){
+      pendingBanner.classList.add('all-done');
+      pendingBannerLabel.textContent = '¡todo completado hoy!';
+    } else {
+      pendingBanner.classList.remove('all-done');
+      pendingBannerLabel.textContent = pending === 1 ? 'tarea pendiente hoy' : 'tareas pendientes hoy';
+    }
+  }
+  function addTodayTask(){
+    addItem(tasksInput.value, todayKey());
+    tasksInput.value='';
+  }
+  tasksAddBtn.addEventListener('click', addTodayTask);
+  tasksInput.addEventListener('keydown', e=>{ if(e.key==='Enter') addTodayTask(); });
+
+  // ====================================================
+  // CALENDARIO MENSUAL
+  // ====================================================
+  let calCursor = new Date();
+  calCursor.setDate(1);
+
+  const calTitle = document.getElementById('cal-title');
+  const daysGrid = document.getElementById('days-grid');
+  document.getElementById('cal-prev').addEventListener('click', ()=>{ calCursor.setMonth(calCursor.getMonth()-1); renderCalendar(); });
+  document.getElementById('cal-next').addEventListener('click', ()=>{ calCursor.setMonth(calCursor.getMonth()+1); renderCalendar(); });
+
+  function renderCalendar(){
+    const items = loadItems();
+    const year = calCursor.getFullYear();
+    const month = calCursor.getMonth();
+    calTitle.textContent = `${MESES[month]} ${year}`;
+
+    const firstDay = new Date(year, month, 1);
+    let startOffset = firstDay.getDay() - 1;
+    if(startOffset < 0) startOffset = 6;
+    const daysInMonth = new Date(year, month+1, 0).getDate();
+
+    daysGrid.innerHTML = '';
+    for(let i=0;i<startOffset;i++){
+      const empty = document.createElement('div');
+      empty.className = 'day-cell empty';
+      daysGrid.appendChild(empty);
+    }
+    const todK = todayKey();
+    for(let d=1; d<=daysInMonth; d++){
+      const cellDate = new Date(year, month, d);
+      const k = keyFor(cellDate);
+      const cell = document.createElement('div');
+      cell.className = 'day-cell';
+      if(k === todK) cell.classList.add('today');
+      if(items.some(i=>i.date===k)) cell.classList.add('has-task');
+      cell.textContent = d;
+      cell.addEventListener('click', ()=> openDayModal(k, cellDate));
+      daysGrid.appendChild(cell);
+    }
+  }
+
+  // ---------- Modal de día ----------
+  const modalBackdrop = document.getElementById('modal-backdrop');
+  const modalTitle = document.getElementById('modal-date-title');
+  const modalTasksList = document.getElementById('modal-tasks-list');
+  const modalInput = document.getElementById('modal-input');
+  const modalAddBtn = document.getElementById('modal-add-btn');
+  const modalClose = document.getElementById('modal-close');
+  let activeModalKey = null;
+
+  function openDayModal(key, dateObj){
+    activeModalKey = key;
+    modalTitle.textContent = `${dateObj.getDate()} de ${MESES[dateObj.getMonth()]}`;
+    renderModalTasks();
+    modalBackdrop.classList.add('open');
+    modalInput.value='';
+  }
+  function closeModal(){
+    modalBackdrop.classList.remove('open');
+    activeModalKey = null;
+    renderAll();
+  }
+  modalClose.addEventListener('click', closeModal);
+  modalBackdrop.addEventListener('click', (e)=>{ if(e.target===modalBackdrop) closeModal(); });
+
+  function renderModalTasks(){
+    if(!activeModalKey) return;
+    const list = loadItems().filter(i=>i.date===activeModalKey);
+    renderItemList(modalTasksList, list, "Sin tareas para este día.", false);
+  }
+  function addModalTask(){
+    if(!activeModalKey) return;
+    addItem(modalInput.value, activeModalKey);
+    modalInput.value='';
+    renderModalTasks();
+  }
+  modalAddBtn.addEventListener('click', addModalTask);
+  modalInput.addEventListener('keydown', e=>{ if(e.key==='Enter') addModalTask(); });
+
+  // ====================================================
+  // RECORDATORIOS (vista global: todo lo registrado)
+  // ====================================================
+  const remindersList = document.getElementById('reminders-list');
+  const remindersInput = document.getElementById('reminders-input');
+  const remindersAddBtn = document.getElementById('reminders-add-btn');
+
+  function renderReminders(){
+    // Muestra TODO lo registrado en cualquier día, más los recordatorios sin fecha.
+    // Orden: primero los sin fecha (largo plazo), luego por fecha ascendente.
+    const items = loadItems().slice().sort((a,b)=>{
+      if(!a.date && !b.date) return 0;
+      if(!a.date) return -1;
+      if(!b.date) return 1;
+      return a.date.localeCompare(b.date);
+    });
+    renderItemList(remindersList, items, "No tienes nada registrado todavía.\nAñade un recordatorio o registra tareas desde el calendario.", true);
+  }
+  function addReminder(){
+    addItem(remindersInput.value, null);
+    remindersInput.value='';
+  }
+  remindersAddBtn.addEventListener('click', addReminder);
+  remindersInput.addEventListener('keydown', e=>{ if(e.key==='Enter') addReminder(); });
+
+  // ---------- Init ----------
+  setHeader();
+  renderAll();
+
+})();
+</script>
+</body>
+</html>
